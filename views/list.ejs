@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="shortcut icon" href="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="CSS/style.css>"> -->
+    <script src="https://kit.fontawesome.com/13f2f83b04.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Raleway:wght@900&family=Roboto:wght@300;400&family=Secular+One&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .gradient-background {
+  background: linear-gradient(163deg,#224cd2,#dd23ae,#d348d6);
+  background-size: 180% 180%;
+  animation: gradient-animation 3s ease infinite;
+  /* min-height: 100vh; */
+  min-height: 600px;
+  /* width: 900px; */
+  overflow-x: hidden; 
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  h1{
+    /* font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif; */
+font-family: 'Secular One', sans-serif;
+color:  #d5df82;
+font-size: 55px;
+position: relative;
+left: 548px;
+top: 76px;
+  }
+  body{
+    font-family: 'Roboto', sans-serif;
+
+  }
+
+ul li{
+    list-style: none;
+}
+
+  /* =========================== */
+  .inputbox {
+  position: relative;
+  width: 256px;
+  left: 576px;
+  top: 118px;
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 10px 10px 10px;
+  font-size: 1em;
+  color: #000000;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+  /* top: 20px; */
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+  color: #d5df82;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0,75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #23c483;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+  height: 44px;
+}
+
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: 843px;
+  top: 78px;
+
+}
+
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+.ans{
+  background-color: white;
+  min-width: 400px;
+  position: absolute;
+  border-radius: 10px;
+  padding: 20px;
+  top: 300px;
+  left: 535px;
+
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.ans ul li{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+    </style>
+
+
+</head>
+<body>
+  <section>
+    <div class="gradient-background">
+    <form action="/" method="post">
+        <h1>To Do List App</h1>
+  <div class="inputbox">
+    <input required="required" type="text" name="input">
+    <span>Add Tasks</span>
+    <i></i>
+</div>
+<!-- <button class="btncc"><i class="fa-solid fa-plus"></i></i></button> -->
+<button> <i class="fa-solid fa-plus"></i> </button>
+
+    </form>
+
+
+
+    <div class="ans">    
+        <ul>
+                <% for(var i = 0;i<name.length;i++){ %>
+                <li> <input type="checkbox" name="check" id="chk"> <%=name[i]%></li>
+                <% } %>
+        </ul>
+    </div>
+
+</div>
+
+</section>
+</body>
+</html>
